@@ -1,0 +1,93 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: arial;
+}
+
+body {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+  background: #07252d;
+  overflow: hidden;
+}
+
+h2 {
+  position: relative;
+  font-size: 6em;
+  letter-spacing: 15px;
+  color: #0e3742;
+  text-transform: uppercase;
+  width: 100%;
+  text-align: center;
+  -webkit-box-reflect: below 1px linear-gradient(transparent, #0008);
+  line-height: 0.70em;
+  outline: none;
+  animation: animate 5s linear infinite;
+  pointer-events: none;
+  user-select: none;
+}
+
+@keyframes animate {
+  0%, 18%, 20%, 50.1%, 60%, 65.1%, 80%, 90.1%, 92% {
+    color: #0e3742;
+    text-shadow: none;
+  }
+  18.1%, 20.1%, 30%, 50%, 60.1%, 65%, 80.1%, 90%, 92.1%, 100% {
+    color: #fff;
+    text-shadow: 0 0 10px #03bcf4,
+    0 0 20px #03bcf4,
+    0 0 40px #03bcf4,
+    0 0 80px #03bcf4,
+    0 0 160px #03bcf4;
+  }
+}
+
+.container {
+  padding:3px;
+  width:100%;
+  white-space: nowrap;
+  overflow: visible;
+}
+.marquee{
+  display:block;
+  position:relative;
+  width:100%;
+  height:160px;
+  animation:scroll 15s linear infinite;
+  padding:3px;
+}
+
+/* .marquee:hover {
+  animation-play-state: paused
+} */
+
+.img1 {
+  width:100%;
+  height:100%;
+  margin:3px;
+  float:left;
+}
+
+/* Make it move */
+@keyframes scroll{
+0% {left:1600px;}
+100% {left:-1600px;}
+}
+
+@media (max-width: 1000px) {
+  h2 {
+    font-size: 3em;
+  }
+
+  .marquee {
+    animation:scroll 10s linear infinite;
+  }
+
+  @keyframes scroll{
+    0% {left:800px;}
+    100% {left:-800px;}
+    }
+}
